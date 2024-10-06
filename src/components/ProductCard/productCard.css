@@ -365,6 +365,7 @@
 
 .color-container {
   display: flex;
+  margin-bottom: 1rem;
 }
 
 .circle {
@@ -373,7 +374,6 @@
   border-radius: 50%;
   margin: 0 5px;
 }
-
 
 @media screen and (max-width: 768px) {
 

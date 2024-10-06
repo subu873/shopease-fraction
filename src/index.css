@@ -22,6 +22,7 @@ h6,
 p {
   margin-bottom: 0;
 }
+
 :root {
   --primary-hover-color: #1d70ba;
   --primary-color: #0b3a63;
@@ -49,4 +50,8 @@ p {
 
 .font-black {
   font-weight: 900 !important;
+}
+
+.modal-header {
+  border-bottom: none !important;
 }

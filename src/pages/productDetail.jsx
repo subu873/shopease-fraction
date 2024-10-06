@@ -1,22 +1,17 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import "../assets/css/productDetails.css";
-import { LuShoppingCart } from "react-icons/lu";
-import axios from "axios";
 import ProductCard from "../components/ProductCard/ProductCard";
 import { FaRegHeart, FaStar } from "react-icons/fa";
-import { MdOutlineShoppingBag } from "react-icons/md";
+import { MdOutlineLocalOffer, MdOutlineShoppingBag } from "react-icons/md";
 import { SAMPLE_PRODUCTS } from "../utils/sampleProducts";
 import { Modal } from "react-bootstrap";
+import { FaCartShopping } from "react-icons/fa6";
 
 export const INCREMENT_CART_ITEMS = "INCREMENT_CART_ITEMS";
 export const DECREMENT_CART_ITEMS = "DECREMENT_CART_ITEMS";
 
 const ProductDetailModal = ({ show, handleClose, data }) => {
-
-
-
-
-  console.log("data", data)
+  console.log("data", data);
 
   const [cartCount, setCartCount] = useState(1);
   const [productsData, setProductsData] = useState(SAMPLE_PRODUCTS);
@@ -32,14 +27,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
     }
   };
 
-  const handleAddToCart = () => {
-    let targetData = {
-      cartItemCount: cartCount,
-      ...data,
-    };
-    localStorage.setItem("cart_items", JSON.stringify(targetData));
-  };
-
+  console.log("data", data);
 
   return (
     <Fragment>
@@ -49,26 +37,22 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
         dialogClassName="modal-90w"
         aria-labelledby="product-detail-modal"
       >
-        <Modal.Header closeButton>
-          <Modal.Title id="product-detail-modal">
-            Custom Modal Styling
-          </Modal.Title>
-        </Modal.Header>
+        <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
           <div className="bg-white">
-            <div class="product-single-container product-single-default">
-              <div class="row">
-                <div class="col-lg-5 col-md-6 product-single-gallery">
-                  <div class="product-slider-container">
-                    <div class="label-group">
-                      <div class="product-label label-sale">
+            <div className="product-single-container product-single-default">
+              <div className="row">
+                <div className="col-lg-5 col-md-6 product-single-gallery">
+                  <div className="product-slider-container">
+                    <div className="label-group">
+                      <div className="product-label label-sale">
                         {data?.discount}% off
                       </div>
                     </div>
-                    <div class="product-single">
-                      <div class="product-item">
+                    <div className="product-single">
+                      <div className="product-item">
                         <img
-                          class="product-single-image"
+                          className="product-single-image"
                           src={data?.imageUrl}
                           width="468"
                           height="468"
@@ -78,7 +62,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                       <div className="produt-thumb">
                         <div className="thumb-image-block active">
                           <img
-                            class="product-single-image"
+                            className="product-single-image"
                             src={data?.imageUrl}
                             width="110"
                             height="110"
@@ -87,7 +71,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                         </div>
                         <div className="thumb-image-block">
                           <img
-                            class="product-single-image"
+                            className="product-single-image"
                             src={data?.imageUrl}
                             width="110"
                             height="110"
@@ -96,7 +80,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                         </div>
                         <div className="thumb-image-block">
                           <img
-                            class="product-single-image"
+                            className="product-single-image"
                             src={data?.imageUrl}
                             width="110"
                             height="110"
@@ -105,7 +89,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                         </div>
                         <div className="thumb-image-block">
                           <img
-                            class="product-single-image"
+                            className="product-single-image"
                             src={data?.imageUrl}
                             width="110"
                             height="110"
@@ -117,12 +101,10 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                   </div>
                 </div>
 
-                <div class="col-lg-7 col-md-6 product-single-details">
-                  <h1 class="product-title">{data?.title}</h1>
-                  <div class="product-desc">
-                    <p>
-                      {data?.subTitle}
-                    </p>
+                <div className="col-lg-7 col-md-6  product-single-details">
+                  <h1 className="product-title">{data?.title}</h1>
+                  <div className="product-desc">
+                    <p>{data?.subTitle}</p>
                   </div>
                   <div className="ratings-container">
                     <p className="ratings">
@@ -130,61 +112,85 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                       <span>(26)</span>
                     </p>
                   </div>
-                  <div class="price-box mb-4">
-                    <span class="new-price"> ₹{data?.discountedPrice}</span>
-                    <span class="old-price"> ₹{data?.price}</span>
+                  <div className="price-box mb-2">
+                    <span className="new-price"> ₹{data?.discountedPrice}</span>
+                    <span className="old-price"> ₹{data?.price}</span>
                   </div>
+                  <p className="tax_font mb-4">Inclusive of all taxes</p>
 
                   <div className="color-container">
-                    {!!data?.sibling_colour_codes && data?.sibling_colour_codes?.map((color) => {
-                      return (
-                        <div className="circle" style={{ background: color }} ></div>
-                      )
-                    })}
+                    {!!data?.sibling_colour_codes &&
+                      data?.sibling_colour_codes?.map((color) => {
+                        return (
+                          <div
+                            className="circle"
+                            style={{ background: color }}
+                          ></div>
+                        );
+                      })}
                   </div>
 
-
-                  <div className="d-flex gap-3">
-                    <button className="w-100 buy-now-btn">
-                      <MdOutlineShoppingBag size={25} /> Add to Cart
-                    </button>
-                    <button className="w-100 buy-now-btn">Buy Now</button>
-                    {/* <button className=" buy-now-btn">
-                    <FaRegHeart size={15} />
-                  </button> */}
-                  </div>
-
-                  <div class="product-action">
+                  <div className="product-action mb-4">
                     <div className="product-count-block">
-                      <div class="input-group">
+                      <div className="input-group">
                         <button
-                          class="btn-decrement count-btn"
+                          className="btn-decrement count-btn"
                           onClick={() => handleChangeCart(DECREMENT_CART_ITEMS)}
                         >
                           -
                         </button>
                         <input
                           type="number"
-                          class="horizontal-quantity form-control quantity-input"
+                          className="horizontal-quantity form-control quantity-input text-center"
                           value={cartCount}
                           min="1"
                           onChange={(e) => handleChangeCart(e?.target?.value)}
                         />
                         <button
-                          class="btn-increment count-btn"
+                          className="btn-increment count-btn"
                           onClick={() => handleChangeCart(INCREMENT_CART_ITEMS)}
                         >
                           +
                         </button>
                       </div>
                     </div>
+                  </div>
+                  <div className="d-flex gap-3">
+                    <button className="w-100 add-to-cart-btn">
+                      <MdOutlineShoppingBag size={25} /> Add to Cart
+                    </button>
+                    <button className="w-100 buy-now-btn">
+                      <FaCartShopping size={25} />
+                      Buy Now
+                    </button>
+                    {/* <button className=" buy-now-btn">
+                    <FaRegHeart size={15} />
+                  </button> */}
+                  </div>
 
-                    <button className="btn btn-primary" onClick={handleAddToCart}>
+                  {/* <button
+                      className="btn btn-primary"
+                      onClick={handleAddToCart}
+                    >
                       <LuShoppingCart size={25} />
                       Add to Cart
-                    </button>
-                  </div>
-                  <hr class="divider" />
+                    </button> */}
+                  <hr className="divider" />
+                  {data?.offers?.length > 0 && (
+                    <div className="">
+                      <h4 className="offers_heading">Offers</h4>
+                      {data?.offers?.map((item) => {
+                        return (
+                          <ul className="offers_content">
+                            <li>
+                              <MdOutlineLocalOffer size={20} /> {item.name}:{" "}
+                              {item.description}
+                            </li>
+                          </ul>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -202,7 +208,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
           </div>
         </Modal.Body>
       </Modal>
-    </Fragment >
+    </Fragment>
   );
 };
 

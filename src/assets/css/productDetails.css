@@ -88,6 +88,23 @@
   border: 1px solid #e7e7e7;
   padding-left: 15px;
   padding-right: 15px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.btn-decrement {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.btn-increment {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.tax_font {
+  font-size: 14px;
+  color: gray;
 }
 
 .product-action {
@@ -171,10 +188,31 @@
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
 
-.buy-now-btn:hover {
+.add-to-cart-btn {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  outline: none;
+  cursor: pointer;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.buy-now-btn:hover,
+.add-to-cart-btn:hover {
   background-color: var(--primary-hover-color);
+  color: white;
 }
 
 .product-desc h3 {
@@ -190,4 +228,32 @@
 .modal-dialog.modal-90w {
   width: 90vw;
   max-width: 90vw;
+}
+
+.quantity-input {
+  max-width: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.offers_heading {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.offers_content {
+  font-size: 0.8rem;
+}
+
+.offers_content li {
+  list-style: none;
 }
