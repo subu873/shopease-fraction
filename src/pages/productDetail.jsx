@@ -155,7 +155,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="d-flex gap-3">
+                  <div className="d-flex gap-3 btnBlock">
                     <button className="w-100 add-to-cart-btn">
                       <MdOutlineShoppingBag size={25} /> Add to Cart
                     </button>
