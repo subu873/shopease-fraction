@@ -12,7 +12,6 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/product" component={ProductDetailModal} />
         </Switch>
         <Footer />
       </Router>

@@ -2,6 +2,7 @@
   "name": "interview",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://subu873.github.io/shopease-fraction/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
