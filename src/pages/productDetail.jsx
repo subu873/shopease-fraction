@@ -163,18 +163,8 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                       <FaCartShopping size={25} />
                       Buy Now
                     </button>
-                    {/* <button className=" buy-now-btn">
-                    <FaRegHeart size={15} />
-                  </button> */}
                   </div>
 
-                  {/* <button
-                      className="btn btn-primary"
-                      onClick={handleAddToCart}
-                    >
-                      <LuShoppingCart size={25} />
-                      Add to Cart
-                    </button> */}
                   <hr className="divider" />
                   {data?.offers?.length > 0 && (
                     <div className="">
@@ -196,7 +186,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
             </div>
 
             <div className="related-products">
-              <h4 className="product__main_heading">Related Products</h4>
+              <h4 className="product__main_heading mb-0 mt-0">Related Products</h4>
               <div className="products__grid">
                 {!!productsData &&
                   productsData.length > 0 &&

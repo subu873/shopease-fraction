@@ -257,3 +257,19 @@ input[type="number"] {
 .offers_content li {
   list-style: none;
 }
+
+@media screen and (max-width:575px) {
+  .modal-dialog.modal-90w {
+    width: 97vw;
+    max-width: 97vw;
+    margin: auto;
+  }
+
+  .modal-body {
+    padding: 0 !important;
+  }
+
+  .related-products {
+    padding: 15px;
+  }
+}
