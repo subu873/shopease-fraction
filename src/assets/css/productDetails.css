@@ -266,8 +266,8 @@ input[type="number"] {
 
 @media screen and (max-width:575px) {
   .modal-dialog.modal-90w {
-    width: 98vw;
-    max-width: 98vw;
+    width: 97vw;
+    max-width: 97vw;
   }
 
   .btnBlock {
