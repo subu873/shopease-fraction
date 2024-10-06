@@ -1,4 +1,3 @@
-import "./App.css";
 import { Fragment } from "react";
 import LandingPage from "./pages/LandingPage";
 import Footer from "./components/Footer/Footer";
