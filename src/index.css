@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f6f7f9 !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+:root {
+  --primary-hover-color: #1d70ba;
+  --primary-color: #0b3a63;
+}
+
+.font-regular {
+  font-weight: 400 !important;
+}
+
+.font-medium {
+  font-weight: 500 !important;
+}
+
+.font-semibold {
+  font-weight: 600 !important;
+}
+
+.font-bold {
+  font-weight: 700 !important;
+}
+
+.font-extrabold {
+  font-weight: 800 !important;
+}
+
+.font-black {
+  font-weight: 900 !important;
+}
