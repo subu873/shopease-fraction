@@ -29,7 +29,7 @@ const LandingPage = () => {
         <div className="products__grid">
           {!!productsData &&
             productsData.length > 0 &&
-            productsData?.slice(0, 20)?.map((item, index) => {
+            productsData?.slice(0, 21)?.map((item, index) => {
               return <ProductCard data={item} key={item?.id} handleOpenDetail={handleOpenDetail} />;
             })}
         </div>

@@ -34,11 +34,19 @@
 
 @media screen and (max-width: 600px) {
   .benefit_block {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .benefit__grid {
     gap: 10px;
+  }
+
+  .benefit_block h4 {
+    font-size: 0.6rem;
+  }
+
+  .benefit_block p {
+    font-size: 0.4rem;
   }
 }
 

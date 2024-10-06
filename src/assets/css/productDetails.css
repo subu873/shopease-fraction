@@ -258,11 +258,20 @@ input[type="number"] {
   list-style: none;
 }
 
+@media screen and (max-width:992px) {
+  .btnBlock {
+    flex-direction: column;
+  }
+}
+
 @media screen and (max-width:575px) {
   .modal-dialog.modal-90w {
     width: 97vw;
     max-width: 97vw;
-    margin: auto;
+  }
+
+  .btnBlock {
+    flex-direction: column;
   }
 
   .modal-body {
@@ -270,10 +279,6 @@ input[type="number"] {
   }
 
   .related-products {
-    padding: 15px;
-  }
-
-  .btnBlock {
-    flex-direction: column;
+    padding: 25px;
   }
 }
